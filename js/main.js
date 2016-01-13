@@ -6,7 +6,8 @@ var isInitiator;
 
 room = prompt("Enter room name:");
 
-var socket = io.connect();
+//var socket = io.connect();
+var socket = io.connect('http://localhost:2013');
 
 if (room !== "") {
     console.log('Joining room ' + room);
