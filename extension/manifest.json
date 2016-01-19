@@ -11,7 +11,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://localhost:8443/*"],
+      "matches": ["https://afternoon-cliffs-6741.herokuapp.com/*"],
+      "js": ["content-script.js"]
+    },
+    {
+    	"matches": ["https://localhost:8443/*"],
       "js": ["content-script.js"]
     }
   ],
@@ -19,5 +23,5 @@
     "desktopCapture",
     "https://localhost:8443/*",
     "tabs"
-  ]
+ ,"https://afternoon-cliffs-6741.herokuapp.com/*" ]
 }
