@@ -25,7 +25,8 @@ window.addEventListener('message', function (event) {
 
     // user chose a stream
     if (event.data.type && (event.data.type === 'SS_DIALOG_SUCCESS')) {
-        startScreenStreamFrom(event.data.streamId);
+        //startScreenStreamFrom(event.data.streamId);
+        displayLocalStream(event.data.streamId);
     }
 
     // user clicked on 'cancel' in choose media dialog

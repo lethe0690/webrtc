@@ -12,25 +12,31 @@
     <style>
     </style>
 
-    <script src='adapter.js'></script>
 
 </head>
 
 <body>
 
+<button id="start">Share Screen</button>
+
 <video/>
 
+<script src="js/extensionControl.js"></script>
+<script src='adapter.js'></script>
+
 <script>
+
+    function displayLocalStream(streamId){
 
     var constraints = {
         audio: false,
         video: {
             mandatory: {
-                chromeMediaSource: 'screen',
-                maxWidth: 1280,
-                maxHeight: 720
-            },
-            optional: []
+                chromeMediaSource: 'desktop',
+                chromeMediaSourceId: streamId,
+                maxWidth: window.screen.width,
+                maxHeight: window.screen.height
+            }
         }
     };
 
@@ -46,6 +52,8 @@
     }
 
     getUserMedia(constraints, successCallback, errorCallback);
+
+}
 </script>
 
 </body>
