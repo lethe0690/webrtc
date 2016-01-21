@@ -5,8 +5,9 @@
 'use strict';
 
 var extensionInstalled = false;
+var room;
 
-document.getElementById('start').addEventListener('click', function() {
+document.getElementById('startSharing').addEventListener('click', function() {
     // send screen-sharer request to content-script
     if (!extensionInstalled){
         var message = 'Please install the extension:\n' +
@@ -17,6 +18,12 @@ document.getElementById('start').addEventListener('click', function() {
             '5. Reload this page';
         alert(message);
     }
+
+    room = document.getElementById("roomName").value;
+
+    console.log('Create or join room', room);
+    socket.emit('create or join', room);
+
     window.postMessage({ type: 'SS_UI_REQUEST', text: 'start' }, '*');
 });
 
@@ -57,14 +64,16 @@ var sdpConstraints = {'mandatory': {
     'OfferToReceiveAudio':true,
     'OfferToReceiveVideo':true }};
 
-var room= "TestRoom";
+//test static room name
+// var room= "TestRoom";
 
 var socket = io.connect('https://localhost:2013');
 
-if (room !== '') {
+// do this until a button is pressed
+/*if (room !== '') {
     console.log('Create or join room', room);
     socket.emit('create or join', room);
-}
+}*/
 
 var localVideo = document.querySelector('#localVideo');
 var remoteVideo = document.querySelector('#remoteVideo');
