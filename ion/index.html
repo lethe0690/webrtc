@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Ion by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="#">ScreenSharing</a></h1>
+				<nav id="nav">
+					<ul>
+						<!--<li><a href="index.html">Home</a></li>-->
+						<!--<li><a href="left-sidebar.html">Left Sidebar</a></li>-->
+						<!--<li><a href="right-sidebar.html">Right Sidebar</a></li>-->
+						<!--<li><a href="no-sidebar.html">No Sidebar</a></li>-->
+						<li><a href="#" class="button special">Help</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<!--<h2>This is Ion</h2>-->
+					<!--<p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>-->
+
+					<p>
+						<video id="videoContainer" style="border: 3px gray solid" width="40%"></video>
+					</p>
+
+					<ul class="actions">
+						<li>
+							<p>Simply</p>
+						</li>
+					<li>
+						<input autofocus="autofocus"
+							   id="roomName" placeholder="type something" type="text">
+					</li>
+
+						<li><p>Then</p></li>
+
+					</ul>
+
+					<ul class="actions">
+
+						<li><a id="startSharing" class="button big special">SHare Your Screen</a></li>
+						<li><p>OR</p></li>
+						<li><a class="button big alt" id="joinSharing">Join a Friend</a></li>
+					</ul>
+				</div>
+			</section>
+
+	</body>
+
+<script src="../adapter.js"></script>
+<script src='https://localhost:2013/socket.io/socket.io.js'></script>
+<script src="../js/scratch.js"></script>
+
+</html>
