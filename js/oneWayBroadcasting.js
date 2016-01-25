@@ -25,6 +25,7 @@ var pc;
 
 //socket.io used for exchanging message
 var socket = io.connect('https://localhost:2013');
+//var socket = io.connect('https://192.168.1.88:3000');
 
 //-------------socket listening--------------
 socket.on('created', function (room){
@@ -40,6 +41,7 @@ socket.on('join', function (room){
     console.log('Another peer made a request to join room ' + room);
     console.log('This peer is the initiator of room ' + room + '!');
     isChannelReady = true;
+    maybeStart();
 });
 
 socket.on('joined', function (room){
@@ -101,6 +103,7 @@ window.addEventListener('message', function (event) {
     if (event.data.type && (event.data.type === 'SS_DIALOG_SUCCESS')) {
         //startScreenStreamFrom(event.data.streamId);
         //displayLocalStream(event.data.streamId);
+        console.log("after emit create or join,the init state is",isInitiator);
         initSharing(event.data.streamId);
     }
 
@@ -133,6 +136,18 @@ document.getElementById('startSharing').addEventListener('click', function() {
 
     window.postMessage({ type: 'SS_UI_REQUEST', text: 'start' }, '*');
 });
+
+//----------------------
+document.getElementById('joinSharing').addEventListener('click', function() {
+
+    room = document.getElementById("roomName").value;
+
+    console.log('Create or join room', room);
+    socket.emit('create or join', room);
+
+    createPeerConnection();
+});
+//---------------------------test
 
 //create peerConnection
 
@@ -177,7 +192,11 @@ function handleUserMedia(stream) {
 function maybeStart() {
     if (!isStarted && typeof localStream != 'undefined' && isChannelReady) {
         createPeerConnection();
-        pc.addStream(localStream);
+
+        if(isInitiator){
+            pc.addStream(localStream);
+        }
+
         isStarted = true;
         console.log('isInitiator', isInitiator);
         if (isInitiator) {
