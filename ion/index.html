@@ -37,15 +37,18 @@
 				</nav>
 			</header>
 
+		<!--<dialog class="modal">This is the dialog!</dialog>-->
+
+
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<!--<h2>This is Ion</h2>-->
-					<!--<p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>-->
+					<h2>This is Ion</h2>
+					<p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>
 
-					<p>
-						<video id="videoContainer" style="border: 3px gray solid" width="40%"></video>
-					</p>
+					<!--<p>-->
+						<!--<video id="videoContainer" style="border: 3px gray solid" width="40%" controls></video>-->
+					<!--</p>-->
 
 					<ul class="actions">
 						<li>
@@ -69,10 +72,62 @@
 				</div>
 			</section>
 
+		<div class="overlay" style="display: none"></div>
+		<div class="modal" style="display: none">
+			<div style="position: relative;top: 20%">
+				<video id="videoContainer" style="border: 3px gray solid" width="60%" controls></video>
+			</div>
+		</div>
+
 	</body>
 
 <script src="../adapter.js"></script>
 <script src='https://localhost:2013/socket.io/socket.io.js'></script>
 <script src="../js/scratch.js"></script>
+
+<style>
+	html, body {
+		margin: 0;
+		min-height: 100%;
+	}
+
+	body {
+		position: relative; /* needed for the overlay to extend when you scroll */
+		/* general styles */
+		padding: 30px;
+		font-family: 'Open Sans', sans-serif;
+		background: #666159;
+		color: #fff;
+	}
+
+	/* overlay styles, all needed */
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 10;
+	}
+
+	/* just some content with arbitrary styles for explanation purposes */
+	.modal {
+		width: 80%;
+		height: 66%;
+
+		line-height: 200px;
+		position: fixed;
+		top: 20%;
+		left: 10%;
+
+
+		background-color: rgba(27, 27, 27, 0.99);
+		border-radius: 5px;
+		text-align: center;
+		z-index: 11; /* 1px higher than the overlay layer */
+	}
+
+</style>
 
 </html>

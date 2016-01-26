@@ -182,6 +182,10 @@ function initSharing(inputstreamId){
 function handleUserMedia(stream) {
     console.log('STEP -- Adding local stream.');
     localVideo.src = window.URL.createObjectURL(stream);
+
+    $('.overlay').show();
+    $('.modal').show();
+
     localStream = stream;
     sendMessage('got user media',room);
     if (isInitiator) {
@@ -264,6 +268,10 @@ function handleIceCandidate(event) {
 function handleRemoteStreamAdded(event) {
     console.log('Remote stream added.');
     remoteVideo.src = window.URL.createObjectURL(event.stream);
+
+    $('.overlay').show();
+    $('.modal').show();
+
     remoteStream = event.stream;
 }
 
