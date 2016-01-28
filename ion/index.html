@@ -72,8 +72,14 @@
 				</div>
 			</section>
 
-		<div class="overlay" style="display: none"></div>
-		<div class="modal" style="display: none">
+<!--for real-->
+		<!--<div class="overlay" style="display: none"></div>-->
+		<!--<div class="modal" style="display: none">-->
+
+<!--for test		-->
+<!--<div class="overlay"></div>-->
+			<div class="modal">
+
 			<div style="position: relative;top: 20%">
 				<video id="videoContainer" style="border: 3px gray solid" width="60%" controls></video>
 			</div>
@@ -86,41 +92,16 @@
 <script src="../js/scratch.js"></script>
 
 <style>
-	html, body {
-		margin: 0;
-		min-height: 100%;
-	}
-
-	body {
-		position: relative; /* needed for the overlay to extend when you scroll */
-		/* general styles */
-		padding: 30px;
-		font-family: 'Open Sans', sans-serif;
-		background: #666159;
-		color: #fff;
-	}
-
-	/* overlay styles, all needed */
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(0,0,0,0.5);
-		z-index: 10;
-	}
 
 	/* just some content with arbitrary styles for explanation purposes */
 	.modal {
-		width: 80%;
-		height: 66%;
+		width: 100%;
+		height: 100%;
 
-		line-height: 200px;
+		/*line-height: 200px;*/
 		position: fixed;
-		top: 20%;
-		left: 10%;
-
+		top: 0;
+		left: 0;
 
 		background-color: rgba(27, 27, 27, 0.99);
 		border-radius: 5px;
