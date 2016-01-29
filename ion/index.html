@@ -43,8 +43,8 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>This is Ion</h2>
-					<p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>
+					<h2>Try it now</h2>
+					<p>Share your screen easily by sharing a magic word</p>
 
 					<!--<p>-->
 						<!--<video id="videoContainer" style="border: 3px gray solid" width="40%" controls></video>-->
@@ -79,6 +79,9 @@
 <!--for test		-->
 <!--<div class="overlay"></div>-->
 			<div class="modal">
+			<span onclick="this.parentElement.style.display='none'" class="closebtn">X</span>
+
+			<div class="info">Message Here</div>
 
 			<div style="position: relative;top: 20%">
 				<video id="videoContainer" style="border: 3px gray solid" width="60%" controls></video>
@@ -93,12 +96,10 @@
 
 <style>
 
-	/* just some content with arbitrary styles for explanation purposes */
 	.modal {
 		width: 100%;
 		height: 100%;
 
-		/*line-height: 200px;*/
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -106,8 +107,33 @@
 		background-color: rgba(27, 27, 27, 0.99);
 		border-radius: 5px;
 		text-align: center;
-		z-index: 11; /* 1px higher than the overlay layer */
+		z-index: 10;
 	}
+
+	.closebtn{
+		position:fixed;
+		top: 64px;
+		right: 32px;
+		text-decoration:none;
+		font-size:24px;font-weight:bold;color:inherit
+	}
+
+	.info{
+		position:relative;
+		top:15%;
+		margin: auto;
+		width: 60%;
+		/*border: 1px solid;*/
+
+		padding:15px 10px 15px 20px;
+		background-repeat: no-repeat;
+		background-position: 10px center;
+
+		color: #00529B;
+		background-color: #cccccc;
+		/*background-image: url('info.png');*/
+	}
+
 
 </style>
 
