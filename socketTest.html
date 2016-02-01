@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="https://192.168.1.88:2013/socket.io/socket.io.js"></script>
+
+    <script src="js/socketTest.js"></script>
+    <script></script>
+    <script>
+        function sendMsg(message)
+        {
+            socket.emit('message', message);
+        }
+
+    </script>
+</head>
+<body>
+
+<button onclick="sendMsg('init');">Init</button>
+<button onclick="sendMsg('join');">Join</button>
+
+</body>
+</html>
