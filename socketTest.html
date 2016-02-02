@@ -6,20 +6,23 @@
 
     <script src="https://192.168.1.88:2013/socket.io/socket.io.js"></script>
 
+    <script src="adapter.js"></script>
     <script src="js/socketTest.js"></script>
     <script></script>
-    <script>
-        function sendMsg(message)
-        {
-            socket.emit('message', message);
-        }
+    <!--<script>-->
+        <!--function sendMsg(message)-->
+        <!--{-->
+            <!--socket.emit('create or join', message);-->
+        <!--}-->
 
-    </script>
+    <!--</script>-->
 </head>
 <body>
 
-<button onclick="sendMsg('init');">Init</button>
-<button onclick="sendMsg('join');">Join</button>
+<button onclick="sendMessage('room1',socket.id);">Init1</button>
+<button onclick="sendMessage('room2',socket.id);">Init2</button>
+<button onclick="sendMessage('room3');">Init3</button>
+<button onclick="sendMessage('room4');">Init4</button>
 
 </body>
 </html>
